@@ -1,0 +1,16 @@
+<template>
+	<div>
+		<text class="iconfont">&#xe614;</text>
+		<view>aaa</view>
+	</div>
+</template>
+
+<script>
+	export default {
+		
+	}
+</script>
+
+<style>
+
+</style>
