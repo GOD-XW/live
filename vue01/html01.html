@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+		</title>
+		<script>
+			window.onload=function(){
+				var ImageArr=["img/c1.png","img/c2.png","img/c3.png","img/c4.png"]
+				var b= document.getElementById('next');
+				var t= document.getElementById('prv');
+				var Img=document.getElementById("img");
+				var content=document.getElementById("ct");
+				// content.innerHTML="共5页，你在第几页"
+				var index=0;
+				b.onclick=function(){
+					index++;	
+					if(index>ImageArr.length-1){
+						index=0
+					}
+						Img.src=ImageArr[index];
+						content.innerHTML="共"+ImageArr.length+"页，你在第"+(index+1)+"页"
+				},
+				t.onclick=function(){
+					index--;
+					
+					if(index<0){
+						index=ImageArr.length-1
+					}
+					Img.src=ImageArr[index]
+					content.innerHTML="共"+ImageArr.length+"页，你在第"+(index+1)+"页"
+				}
+			}
+		</script>
+		<style>
+			img{
+				width:100px;
+				height: 100px;
+				border: 1px solid salmon;
+			}
+			#next{
+				margin-bottom: 30px;
+				border: 1px solid #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="img/c1.png"  id="img"/>
+		</div>
+		<div id="next">下一页</div>
+		<div id="prv">上一页</div>
+		<div id="ct"></div>
+	</body>
+</html>

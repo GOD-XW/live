@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.a{
+				color: red;
+				/* background-color: #FF0000; */
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div style="border: 1px solid #000000;width: 100px;height: 100px;">
+				<div style="border-bottom: 1px solid #000000;display: flex;flex-direction: row;">
+					<div :class="inv==index?'a':''" @click="change(index)" v-for="(item,index) in list" :key="index">{{item}}</div>
+<!-- 					<div :class="inv==1?'a':''" @click="change(index)">新闻</div>
+					<div :class="inv==2?'a':''" @click="change(index)">军事</div> -->
+				</div>
+				
+				<div v-if="inv==0">首页内容</div>
+				<div v-if="inv==1">新闻内容</div>
+				<div v-if="inv==2">军事内容</div>
+			</div>
+		</div>
+		<script>
+		let app=new Vue({
+			el:"#app",
+			data:{
+				inv:0,
+				list:["首页","新闻","军事"]
+			},
+			methods:{
+				change(index){
+					this.inv=index;
+				}
+			}
+		})
+		</script>
+	</body>
+</html>
